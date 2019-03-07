@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{F3692919-1345-43F0-91E5-FB79F4726754}</ProjectGuid>
-    <RootNamespace>AA105</RootNamespace>
+    <ProjectGuid>{184DAFF6-F14C-46DA-8755-4ECDFA147CB9}</ProjectGuid>
+    <RootNamespace>AA1051</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,11 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DynArray.h" />
+    <ClCompile Include="..\AA1_05\DynArray.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DynArray.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="DynArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
