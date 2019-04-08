@@ -8,7 +8,10 @@ int main() {
 
 	MyQueue list;
 
-	list.push_back(5);
+	list.last = new node;
+	list.last->data = 5;
+
+	list.push_back(6);
 
 
 
