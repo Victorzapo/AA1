@@ -19,32 +19,32 @@ public:
 
 	MyQueue();
 
-	void push_back(int newData);
-	void pop_back();
-	void push_front(int newData);
-	void pop_front();
+	void Push_back(int newData);
+	void Pop_back();
+	void Push_front(int newData);
+	void Pop_front();
 
-	int front();
-	int back();
+	int Front();
+	int Back();
 
-	int getElementPos(int position);
-	int maxElement();
-	int minElement();
-	void insert(int newElement, int position);
+	int GetElementPos(int position);
+	int MaxElement();
+	int MinElement();
+	void Insert(int newElement, int position);
 
-	void del(int pos);
-	void delAll(int val);
-	void delDuplicates();
+	void Delete(int pos);
+	void DeleteAll(int val);
+	void DeleteDuplicates();
 
-	void change();
-	int getNumElements();
-	bool empty();
+	void Change();
+	int GetNumElements();
+	bool Empty();
 
 
 
-	bool operator ==(const MyQueue& Q1);
+	bool operator == (const MyQueue& Q1);
 	
-	void operator<<(MyQueue Q1);
+	void  operator<<(const MyQueue Q1);
 
 	~MyQueue();	
 };

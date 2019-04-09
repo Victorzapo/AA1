@@ -1,8 +1,8 @@
 #include "MyQueue.h"
+#include <iostream>
 
 
-
-void MyQueue::push_back(int newData)
+void MyQueue::Push_back(int newData)
 {
 	last->prev = new node;
 	last->prev->data = newData;
@@ -11,13 +11,13 @@ void MyQueue::push_back(int newData)
 	last->prev = nullptr;
 }
 
-void MyQueue::pop_back()
+void MyQueue::Pop_back()
 {
 	last = last->next;
 	last->prev = nullptr;
 }
 
-void MyQueue::push_front(int newData)
+void MyQueue::Push_front(int newData)
 {
 	first->next = new node;
 	first->next->data = newData;
@@ -26,24 +26,24 @@ void MyQueue::push_front(int newData)
 
 }
 
-void MyQueue::pop_front()
+void MyQueue::Pop_front()
 {
 	first = first->prev;
 	first->next = nullptr;
 
 }
 
-int MyQueue::front()
+int MyQueue::Front()
 {
 	return first->data;
 }
 
-int MyQueue::back()
+int MyQueue::Back()
 {
 	return last->data;
 }
 
-int MyQueue::getElementPos(int position)
+int MyQueue::GetElementPos(int position)
 {
   	node* tmp = first;
 
@@ -53,7 +53,7 @@ int MyQueue::getElementPos(int position)
 	return tmp->data;
 }
 
-int MyQueue::maxElement()
+int MyQueue::MaxElement()
 {
 	int max = 0;
 	node* tmp = first;
@@ -67,7 +67,7 @@ int MyQueue::maxElement()
 	return max;
 }
 
-int MyQueue::minElement()
+int MyQueue::MinElement()
 {
 	node* tmp = first;
 	int min = tmp->data;
@@ -81,7 +81,7 @@ int MyQueue::minElement()
 	return min;
 }
 
-void MyQueue::insert(int newElement, int position)
+void MyQueue::Insert(int newElement, int position)
 {
 	node* tmp = first;
 
@@ -98,7 +98,7 @@ void MyQueue::insert(int newElement, int position)
 
 }
 
-void MyQueue::del(int position)
+void MyQueue::Delete(int position)
 {
 	node* tmp = first;
 
@@ -114,7 +114,7 @@ void MyQueue::del(int position)
 
 }
 
-void MyQueue::delAll(int val)
+void MyQueue::DeleteAll(int val)
 {
 	node* tmp = first;
 	int posCounter = 0;
@@ -122,7 +122,7 @@ void MyQueue::delAll(int val)
 	while (tmp != nullptr) {
 		
 		if (tmp->data == val) {
-			del(posCounter);
+			Delete(posCounter);
 		}
 			
 
@@ -131,7 +131,7 @@ void MyQueue::delAll(int val)
 	}
 }
 
-void MyQueue::delDuplicates()
+void MyQueue::DeleteDuplicates()
 {
 	int number;
 	node* tmp = first;
@@ -145,7 +145,7 @@ void MyQueue::delDuplicates()
 		while (tmp2 != nullptr)
 		{
 			if (tmp2->data == number) {
-				del(posCounter);
+				Delete(posCounter);
 			}
 			tmp2 = tmp2->prev;
 			posCounter++;
@@ -164,16 +164,16 @@ MyQueue::MyQueue()
 
 }
 
-void MyQueue::change()
+void MyQueue::Change()
 {
 	node* tmp = last;
-	pop_back();
-	push_back(first->data);
-	pop_front();
-	push_front(tmp->data);
+	Pop_back();
+	Push_back(first->data);
+	Pop_front();
+	Push_front(tmp->data);
 }
 
-int MyQueue::getNumElements()
+int MyQueue::GetNumElements()
 {
 	node* tmp = first;
 	int elements = 0;
@@ -186,7 +186,7 @@ int MyQueue::getNumElements()
 	return elements;
 }
 
-bool MyQueue::empty()
+bool MyQueue::Empty()
 {
 	if(first == nullptr)
 		return true;
@@ -195,7 +195,7 @@ bool MyQueue::empty()
 
 
 
-bool MyQueue::operator==(const MyQueue & Q1)
+bool MyQueue::operator ==(const MyQueue & Q1)
 {
 	node*tmp1 = first;
 	node*tmp2 = Q1.first;
@@ -216,7 +216,7 @@ bool MyQueue::operator==(const MyQueue & Q1)
 	return equal;
 }
 
-void MyQueue::operator<<(MyQueue Q1)
+void MyQueue::operator<<(const MyQueue Q1)
 {
 	node* tmp = first;
 
@@ -227,6 +227,8 @@ void MyQueue::operator<<(MyQueue Q1)
 		tmp = tmp->prev;
 	}
 }
+
+
 
 MyQueue::~MyQueue()
 {
