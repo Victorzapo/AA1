@@ -109,8 +109,10 @@ void MyQueue::Delete(int position)
 	if(tmp->prev != nullptr)
 	tmp->prev->next = tmp->next;
 
-	if(tmp->next != nullptr)
-	tmp->next->prev = tmp->prev;
+	if (tmp->next != nullptr)
+		tmp->next->prev = tmp->prev;
+	else
+		first = tmp->prev;
 
 }
 
@@ -123,11 +125,12 @@ void MyQueue::DeleteAll(int val)
 		
 		if (tmp->data == val) {
 			Delete(posCounter);
+			tmp = tmp->prev;
 		}
+		else 
+			tmp = tmp->prev;
 			
-
 		posCounter++;
-		tmp = tmp->prev;
 	}
 }
 
